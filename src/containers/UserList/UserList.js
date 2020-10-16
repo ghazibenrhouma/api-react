@@ -6,24 +6,7 @@ import "./UserList.css";
 
 const UserList = () => {
     const [dataUser, setDataUser] = useState([]);
-    // const [name, setName] = useState({name: ""});
 
-    // const handleChange = event => {
-    //     setName({ name: event.target.value });
-    // }
-
-    // const handleSubmit = event => {
-    //     event.preventDefault();
-    //     const user = {
-    //         name: name
-    //     };
-    //     axios
-    //         .post(`https://jsonplaceholder.typicode.com/users`, user)
-    //         .then(res => {
-    //             console.log(res);
-    //             console.log(res.data);
-    //         });
-    // };
     useEffect(() => {
         const fetchData = async() => {
             const result = await axios.get(
@@ -35,15 +18,8 @@ const UserList = () => {
     }, []);
     console.log(dataUser);
     return ( <
-        div className = "card-style" > { " " } {
-            /* <form onSubmit={e => handleSubmit(e)}>
-                                            <label>
-                                                Name :
-                                                <input type="text" name = "name" onChange={e => handleChange(e)} />
-                                            </label>
-                                            <button type="submit">Add User</button>
-                                            </form> */
-        } { " " } <
+        div className = "card-style" >
+        <
         ul > { " " } {
             dataUser.map((el) => {
                 return ( <
